@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magician cat</title>
+    <h1> Catch magician teddy bear!</h1>
+    <h3> Click on appearing magician teddy bear </h3>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .e {
+
+            position: static;
+            /* right: 50%; */
+            /* bottom: 50%; */
+            height: 8cm;
+            display: none;
+        }
+
+        /* #gif1 {
+            position: static;
+            height: 8cm;
+            display: none;
+        }
+
+        #gif3 {
+            position: static; 
+            height: 8cm;
+            display: none;
+        }
+
+          
+         #gif4 {
+            position: static;
+            height: 8cm;
+            display: none;}
+            
+        */
+        #gif2 {
+            position: sticky;
+            height: 5.5cm;
+            display: none;
+        }
+
+        /* set gifs properties seperatly otherwise it didnt work, changed position from absolute to static so gif1 3 and 4 dont change position in page, but how to make them appear in center of page */
+        /* give gif item class so I dont have to change properties seperetly */
+        /* changed gif2 position from absolute to sticky and it works better */
+    </style>
+</head>
+
+<body>
+    <img class="e" id="gif1" src="wondering cat .gif" alt="gif1">
+    <img class="e" id="gif2" src="appearing teddy .gif" alt="gif2">
+    <img class="e" id="gif3" src="cat with wand .gif" alt="gif3">
+    <img class="e" id="gif4" src="cat hugs teddy .gif" alt="gif4">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var gif1 = document.getElementById('gif1');
+            var gif2 = document.getElementById('gif2');
+            var gif3 = document.getElementById('gif3');
+            var gif4 = document.getElementById('gif4');
+
+            var pageWidth = window.innerWidth;
+            var pageHeight = window.innerHeight;
+
+            function getRandomPosition() {
+                var x = Math.random() * (pageWidth - 200) + 100; // Random X position (excluding 100px from each side)
+                var y = Math.random() * (pageHeight - 200) + 100; // Random Y position (excluding 100px from top and bottom)
+                return { x: x, y: y };
+            }
+
+            function showGif(element) {
+                element.style.display = 'block';
+            }
+
+            function hideGif(element) {
+                element.style.display = 'none';
+            }
+
+            var clickCount = 0;
+            var gif2Timeout = null;
+
+            gif1.style.left = (pageWidth - gif1.width) / 2 + 'px'; // Centering gif1 horizontally
+            gif1.style.top = (pageHeight - gif1.height) / 2 + 'px'; // Centering gif1 vertically
+
+            gif3.style.left = (pageWidth - gif3.width) / 2 + 'px'; // Centering gif1 horizontally
+            gif3.style.top = (pageHeight - gif3.height) / 2 + 'px'; // Centering gif1 vertically
+
+            gif4.style.left = (pageWidth - gif4.width) / 2 + 'px'; // Centering gif1 horizontally
+            gif4.style.top = (pageHeight - gif4.height) / 2 + 'px'; // Centering gif1 vertically
+            // added to gif1 gif3 and 4 so they appear in the same spot, but it is needed to make gif1 desapear when 3 or for appear also refreshing page it appear in diferrent place
+            // problem with not desapearing gif1 when needed is fixed but problem with gif position in page is still there
+            gif2.addEventListener('click', function () {
+                clickCount++;
+                if (clickCount >= 3) {
+                    clearTimeout(gif2Timeout);
+                    hideGif(gif2);
+                    hideGif(gif1);
+                    showGif(gif4);
+                    setTimeout(function () {
+                        hideGif(gif4);
+                        showGif(gif2);
+                        clickCount = 0;
+                    }, 3000);
+                } else {
+                    hideGif(gif2);
+                    hideGif(gif1);
+                    showGif(gif3);
+                    setTimeout(function () {
+                        hideGif(gif3);
+                        showGif(gif1);
+                    }, 1000);
+                }
+            });
+
+            setInterval(function () {
+                var position = getRandomPosition();
+                gif2.style.left = position.x + 'px';
+                gif2.style.top = position.y + 'px';
+                showGif(gif2);
+                gif2Timeout = setTimeout(function () {
+                    hideGif(gif2);
+                }, 1000);
+            }, 4000); // Change gif2 position every 4 seconds
+        });
+    </script>
+</body>
+
+</html>
