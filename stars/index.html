@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- asked ai to write me a js code that will create images randomly placing dots but does not work -->
+<!-- the problem was that ai give me html code that I copied in js file -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorfull star space</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+            background-color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var canvas = document.getElementById('myCanvas');
+            var ctx = canvas.getContext('2d');
+
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            function drawDot(x, y, color) {
+                ctx.beginPath();
+                ctx.arc(x, y, 2, 0, 2 * Math.PI);
+                ctx.fillStyle = color;
+                ctx.fill();
+            }
+
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            function generateRandomDots(numDots) {
+                for (var i = 0; i < numDots; i++) {
+                    var x = getRandomInt(0, canvas.width);
+                    var y = getRandomInt(0, canvas.height);
+                    var color = 'rgb(' + getRandomInt(0, 255) + ',' + getRandomInt(0, 255) + ',' + getRandomInt(0, 255) + ')';
+                    drawDot(x, y, color);
+                }
+            }
+
+            generateRandomDots(500); // Adjust the number of dots as needed
+        });
+    </script>
+</body>
+
+</html>
