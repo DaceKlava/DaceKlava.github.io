@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>line generative art</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(20, 50px); /* Adjust the number of columns */
+            grid-template-rows: repeat(10, 50px);   /* Adjust the number of rows */
+            gap: 0px; /* Adjust the gap between images */
+        }
+        .grid img {
+            width: 50px; 
+            height: 50px; 
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid" id="image-grid"></div>
+
+    <script>
+        // Array of image sources (adjust the paths as needed)
+        const images = ['pictures/line1.png', 'pictures/line2.png'];
+
+        // Array of possible rotations
+        const rotations = [0, 90, 180, 270];
+
+        // Function to get a random element from an array
+        function getRandomElement(arr) {
+            const randomIndex = Math.floor(Math.random() * arr.length);
+            return arr[randomIndex];
+        }
+
+        // Function to create the grid
+        function createGrid(rows, cols) {
+            const gridElement = document.getElementById('image-grid');
+
+            for (let i = 0; i < rows * cols; i++) {
+                const imgElement = document.createElement('img');
+                const randomImage = getRandomElement(images);
+                const randomRotation = getRandomElement(rotations);
+            }
+
+                // invert effect adding
+
+                // imgElement.src = randomImage;
+                // imgElement.style.transform = `rotate(${randomRotation}deg)`;
+
+                for (let i = 0; i < rows * cols; i++) {
+                const imgElement = document.createElement('img');
+                const randomImage = getRandomElement(images);
+                const randomRotation = getRandomElement(rotations);
+                const applyInvert = Math.random() > 0.5; // 50% chance to apply invert effect
+
+                imgElement.src = randomImage;
+                imgElement.style.transform = `rotate(${randomRotation}deg)`;
+                if (applyInvert) {
+                    imgElement.style.filter = 'invert(1)';
+                }
+
+                // end of added code
+
+                gridElement.appendChild(imgElement);
+            }
+        }
+
+        //  Create a 4x4 grid
+         createGrid(20, 20);
+       
+        // grid-auto-columns: min-content max-content auto;
+    </script>
+</body>
+</html>
