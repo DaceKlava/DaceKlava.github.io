@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monets sunrise</title>
+    <style>
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(files/sunriseimage3.jpg) no-repeat center center;
+            background-size: cover;
+            z-index: 0;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+            z-index: 1;
+        }
+        .square {
+            background-color: rgba(0, 0, 0, 0);
+            /* border: 0px solid rgba(255, 255, 255, 0.1); */
+            /* transition: background-color 0.3s; */
+
+            opacity: 0.3;  
+            margin: 0;
+            filter: blur(10px); 
+             
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="overlay">
+        <!-- Squares will be dynamically added here by JavaScript -->
+    </div>
+    <script>
+        const overlay = document.querySelector('.overlay');
+
+        // Function to generate a random color
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Create squares
+        const rows = Math.ceil(window.innerHeight / 100);
+        const cols = Math.ceil(window.innerWidth / 100);
+        for (let i = 0; i < rows * cols; i++) {
+            const square = document.createElement('div');
+            square.classList.add('square');
+            square.style.width = '200px';
+            square.style.height = '100px';
+            square.addEventListener('click', function() {
+                this.style.backgroundColor = getRandomColor();
+            });
+            overlay.appendChild(square);
+        }
+
+        // Adjust squares on window resize
+        window.addEventListener('resize', function() {
+            while (overlay.firstChild) {
+                overlay.removeChild(overlay.firstChild);
+            }
+            const rows = Math.ceil(window.innerHeight / 100);
+            const cols = Math.ceil(window.innerWidth / 100);
+            for (let i = 0; i < rows * cols; i++) {
+                const square = document.createElement('div');
+                square.classList.add('square');
+                square.style.width = '100px';
+                square.style.height = '100px';
+                square.addEventListener('click', function() {
+                    this.style.backgroundColor = getRandomColor();
+                });
+                overlay.appendChild(square);
+            }
+        });
+    </script>
+</body>
+</html>
