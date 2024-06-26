@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="utf-8">
+    <title>glitched reality</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+ </head>
+ <body>
+
+  <scene>
+     <a-scene inspector="" keyboard-shortcuts="" screenshot="" xr-mode-ui="" device-orientation-permission-ui="">  
+        <a-sky color="#FF8624" material="" geometry="" position="0 1.22269 2.92103"></a-sky>
+          <!-- #FF6700 -->
+          <!--B34700  -->
+          <!-- FFC000 -->
+          <!-- FFAB3C -->
+          <!-- FF943C -->
+          <!-- FF8624 -->
+           <!-- FF7605 -->
+        <a-image src="images/glich memory 1.png" material="" geometry="" position="1.60231 1.38896 1.68907" rotation="0 -137.27152038862317 0"></a-image>
+        <a-image src="images/glich memory 2.png" material="" geometry="" position="0.19128 1.62937 -1.7888" rotation="0 -17.460888806611838 0"></a-image>
+        <a-image src="images/glich memory 3.png" material="" geometry="" position="2.00376 1.35429 -0.5746" rotation="0 -73.54027892063142 0"></a-image>
+        <a-image src="images/glich memory 4.png" material="" geometry="" position="-1.73823 1.90243 0.04662" rotation="0 88.73511964750087 0"></a-image>
+        <a-image src="images/glich memory 5.png" material="" geometry="" position="-0.67553 1.92709 1.94355" rotation="11.369774486576057 154.4000936740591 -2.207033426843931"></a-image>
+     <!-- <div class="a-loader-title" style="display: none;">glitched reality</div><div class="a-loader-title" style="display: none;">glitched reality</div><div class="a-loader-title" style="display: none;">glitched reality</div></a-scene> --> 
+    
+         <!-- Picture 1 -->
+       <a-image class="picture1" src="images/baloonglitch1.png" position="1.52669 1.40693 1.63369" visible="false" material="" geometry="" rotation="0 -130.569 0"></a-image>
+
+       <a-image class="picture1" src= "images/friendglich1.png" position="1.94998 1.36287 -0.57932" visible="false"  material="" geometry= "" rotation= "0 -69.4132639223041 0" ></a-image>
+         <!-- Picture 2 -->
+       <a-image class="picture2" src="images/baloonglitch2.png" position="1.52669 1.40693 1.63369" visible="true" material="" geometry="" rotation="0 -130.569 0"></a-image> 
+
+       <a-image class="picture2" src="images/friendglich2.png"  position="1.94998 1.36287 -0.57932" visible="true" material="" geometry="" rotation="0 -69.4132639223041 0" ></a-image>
+
+       <a-image class="picture1" src="images/amberglitch1.png" visible="false" material="" geometry="" position="0.1782 1.6393 -1.74313" rotation="0 -18.719104124719127 0"></a-image>
+
+       <a-image class="picture2" src="images/amberglitch2.png" visible="true"  material="" geometry="" position="0.1782 1.6393 -1.74313" rotation="0 -18.719104124719127 0"></a-image>
+       
+       <a-image class="picture1" src="images/outsider1.png" visible="false" material="" geometry="" position="-1.68461 1.90021 0.04974" rotation="0 89.21124757525456 0"></a-image>
+       
+       <a-image class="picture2" src="images/outsider2.png" visible="true" material="" geometry="" position="-1.68461 1.90021 0.04974" rotation="0 89.21124757525456 0"></a-image>
+
+        <a-image class="picture1" src="images/onstairs1.png" visible="false" material="" geometry="" position="-0.65404 1.92749 1.88486" rotation="11.89517678471102 148.9569946203163 -6.781528463168424"></a-image> 
+
+        <a-image class="picture2" src="images/onstairs2.png" visible="true" material="" geometry="" position="-0.65404 1.92749 1.88486" rotation="11.89517678471102 148.9569946203163 -6.781528463168424"></a-image> 
+
+        
+
+            
+
+            <!-- Script for alternation -->
+            <script>
+                AFRAME.registerComponent('image-alternation', {
+                    init: function () {
+                        var pictures1 = document.querySelectorAll('.picture1');
+                        var pictures2 = document.querySelectorAll('.picture2');
+            
+                        // Initial delay before starting the alternation loop
+                        var initialDelay = 150; // in milliseconds
+                        var timeout;
+            
+                        // Function to alternate between pictures
+                        function alternatePictures() {
+                            timeout = setTimeout(function () {
+                                pictures1.forEach(function (picture) {
+                                    picture.setAttribute('visible', !picture.getAttribute('visible'));
+                                });
+                                pictures2.forEach(function (picture) {
+                                    picture.setAttribute('visible', !picture.getAttribute('visible'));
+                                });
+                                alternatePictures(); // Recursive call for continuous alternation
+                            }, initialDelay);
+                        }
+            
+                        // Start the alternation loop
+                        alternatePictures();
+            
+                        // Stop alternation when the scene unloads
+                        this.el.sceneEl.addEventListener('unload', function () {
+                            clearTimeout(timeout);
+                        });
+                    }
+                });
+            </script>
+        
+           
+        
+    <!-- Attach the component to any entity to start the alternation -->
+    <a-entity image-alternation></a-entity>
+
+
+    <div class="a-loader-title" style="display: none;">glitched reality</div><div class="a-loader-title" style="display: none;">glitched reality</div><div class="a-loader-title" style="display: none;">glitched reality</div></a-scene>
+  </scene>
+
+
+
+ </body>
+</html>
