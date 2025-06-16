@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="utf-8">
+    <title>studentu skvērs</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+ </head>
+ <body>
+
+  <scene>
+     <a-scene inspector="" keyboard-shortcuts="" screenshot="" xr-mode-ui="" device-orientation-permission-ui="">  
+        <a-sky color="#30334D" material="" geometry="" position="0 1.22269 2.92103"></a-sky>
+        
+        <a-plane color="#667687" height="20" width="20" rotation="-90 0 0" material="" geometry="" scale="-0.7 0.7 1" position="0 0 -7"></a-plane>
+        <!-- grass -->
+        <a-plane color="#667687" height="20" width="20" rotation="-90 0 0" material="color: #216926; emissive: #561f1f; metalnessTextureOffset: -1.99 -0.46; metalnessTextureRepeat: 1 -0.53; roughness: 1; roughnessTextureOffset: 2.67 1.11; roughnessTextureRepeat: 2.21 1.42" 
+        geometry="" scale="-0.7 0.42763 1" position="0 0.035 -4.321"></a-plane>
+        <a-box color="#brown" depth="2" height="4" width="0.5" rotation="-90 90 0" material="" geometry="" position="0.053 3.041 -14.01992" scale="0.36486 3.52 3.132" opacity="1"></a-box>
+         
+        <!-- walls -->
+         <a-box color="#545454" depth="2" height="4" width="0.5" rotation="0 0 -90.129" 
+        material="color: #ababab; repeat: 0.79 1; emissive: #000000; metalnessTextureRepeat: 2.19 1.15; normalScale: 0 0; normalTextureRepeat: 0 0; roughness: 0.59; metalness: 1; metalnessTextureOffset: 2 1.5; normalTextureOffset: 0.18 0; roughnessTextureOffset: 0.54 0; roughnessTextureRepeat: -0.49 1" geometry="" 
+        position="4.97878 1.43057 -13.50775" scale="5.79408 0.49488 0.37622" opacity="1"></a-box>
+        
+
+        <a-box color="#brown" depth="2" height="4" width="0.5" rotation="-90 0 0" material="" geometry="" position="-6.878 2.95099 -12.07937" scale="0.271 0.93671 3.11759" opacity="1"></a-box>
+         <!-- glass -->
+         <a-box color="#028090" depth="2" height="4" width="0.5" rotation="-90 90 0" 
+        material="color: #028090; opacity: 0.5;  metalness: 1;  roughness: 0.65;  side: double;
+        geometry=" position="-2.98953 1.58442 -10.259" scale="0.35 2.13914 1.65193" opacity="0.5"
+        ></a-box> 
+        <a-box color="#028090" depth="2" height="4" width="0.5" rotation="-90 90 0" 
+        position="4.78502 1.52624 -10.259" scale="0.35 1.124 1.705" opacity="0.5"
+         material="color: #028090; opacity: 0.5;  metalness: 1;  roughness: 0.65;  side: double;
+         "geometry="" position="-0.15254 4.0957 -10.259" scale="0.35 3.57442 0.81637" opacity="0.5"></a-box>   
+        <a-box color="#028090" depth="2" height="4" width="0.5" 
+        rotation="-90 90 0"
+         material="color: #028090; opacity: 0.5;  metalness: 1;  roughness: 0.65;  side: double;
+         "geometry="" position="-0.15254 4.0957 -10.259" scale="0.35 3.57442 0.81637" opacity="0.5"></a-box>  
+         <!-- roof -->
+        <a-box color="#545454" depth="2" height="4" width="0.5" rotation="-21.837140445821067 -179.24239775534133 -90.12912596305415" material="" geometry="" position="0.06161 5.48174 -11.24682" scale="0.35 3.574 2.97811" opacity="1"></a-box>
+        
+        <!-- table -->
+        <a-box color="#545454" depth="2" height="4" width="0.5" rotation="0 0 -90.129" material="color: #896d1f; repeat: 0.48 1; emissive: #31471f; metalnessTextureRepeat: 0 0; normalScale: 0 0; normalTextureRepeat: 0 0; roughness: 1" geometry="" position="-1.96954 0.4255 -11.8366" scale="1.83948 0.976 0.79457" opacity="1"></a-box>
+        
+        <!-- coffe machine -->
+        <a-box color="#545454" depth="2" height="4" width="0.5" rotation="0 0 -90.129" 
+        material="color: #ababab; repeat: 0.79 1; emissive: #000000; metalnessTextureRepeat: 2.19 1.15; normalScale: 0 0; normalTextureRepeat: 0 0; roughness: 0.59; metalness: 1; metalnessTextureOffset: 2 1.5; normalTextureOffset: 0.18 0; roughnessTextureOffset: 0.54 0; roughnessTextureRepeat: -0.49 1" geometry="" 
+        position="4.97878 1.43057 -13.50775" scale="5.79408 0.49488 0.37622" opacity="1"></a-box>
+
+        <a-box color="#028090" depth="2" height="4" width="0.5" 
+        rotation="-90 90 0" position="4.94356 1.71061 -13.14282" scale="0.0701 0.32871 0.73924" opacity="0.5" 
+        material="metalness: 1; roughness: 0.65; side: double" geometry=""></a-box>
+
+        <a-box color="#090809" depth="2" height="4" width="0.5" 
+        rotation="-90 90 0" position="4.99048 0.58457 -13.14282" scale="0.0701 0.21141 0.2466" opacity="0.5" 
+        material="" geometry=""></a-box>
+        <!-- sofa -->
+         
+         <a-box color="#545454" depth="2" height="4" width="0.5" rotation="0 0 -90.129" 
+         material="color: #443145; repeat: [object Object]; emissive: #4c3b4f; metalnessTextureRepeat: [object Object]; normalScale: [object Object]; normalTextureRepeat: [object Object]; roughness: 0.2; offset: [object Object]; ambientOcclusionTextureOffset: [object Object]; ambientOcclusionTextureRepeat: [object Object]; displacementBias: 0.98; displacementTextureOffset: [object Object]; displacementTextureRepeat: [object Object]; metalnessTextureOffset: [object Object]; normalTextureOffset: [object Object]; roughnessTextureOffset: [object Object]; roughnessTextureRepeat: [object Object]"
+         geometry="" position="-5.1497 0.367 -13.25491" scale="1.40529 0.42997 0.68298" opacity="1" visible=""></a-box>
+         
+         <a-box color="#545454" depth="2" height="4" width="0.5" 
+         rotation="0 90 -90.129" 
+         material="color: #443145; repeat: [object Object]; emissive: #4c3b4f; metalnessTextureRepeat: [object Object]; normalScale: [object Object]; normalTextureRepeat: [object Object]; roughness: 0.2; offset: [object Object]; ambientOcclusionTextureOffset: [object Object]; ambientOcclusionTextureRepeat: [object Object]; displacementBias: 0.98; displacementTextureOffset: [object Object]; displacementTextureRepeat: [object Object]; metalnessTextureOffset: [object Object]; normalTextureOffset: [object Object]; roughnessTextureOffset: [object Object]; roughnessTextureRepeat: [object Object]" 
+         geometry="" position="-6.27536 0.37363 -12.34423" scale="1.40529 0.79446 0.70327" opacity="1" visible=""></a-box>
+        
+         <!-- <a-box color="#545454" depth="2" height="4" width="0.5" rotation="0 90 -90.129" material="color: #443145; repeat: NaN NaN; emissive: #4c3b4f; metalnessTextureRepeat: NaN NaN; normalScale: NaN NaN; normalTextureRepeat: NaN NaN; roughness: 0.2; offset: NaN NaN; ambientOcclusionTextureOffset: NaN NaN; ambientOcclusionTextureRepeat: NaN NaN; displacementBias: 0.98; displacementTextureOffset: NaN NaN; displacementTextureRepeat: NaN NaN; metalnessTextureOffset: NaN NaN; normalTextureOffset: NaN NaN; roughnessTextureOffset: NaN NaN; roughnessTextureRepeat: NaN NaN"  -->
+         geometry="" position="-6.68941 0.86883 -12.34534" scale="3.50393 0.79446 0.31455" opacity="1" visible=""></a-box>
+        
+         <a-box color="#545454" depth="2" height="4" width="0.5" rotation="0 90 -90.129" material="color: #443145; repeat: NaN NaN; emissive: #4c3b4f; metalnessTextureRepeat: NaN NaN; normalScale: NaN NaN; normalTextureRepeat: NaN NaN; roughness: 0.2; offset: NaN NaN; ambientOcclusionTextureOffset: NaN NaN; ambientOcclusionTextureRepeat: NaN NaN; displacementBias: 0.98; displacementTextureOffset: NaN NaN; displacementTextureRepeat: NaN NaN; metalnessTextureOffset: NaN NaN; normalTextureOffset: NaN NaN; roughnessTextureOffset: NaN NaN; roughnessTextureRepeat: NaN NaN" 
+         geometry="" position="-6.64785 0.82738 -12.34525" scale="3.14659 0.79446 0.35675" opacity="1" visible=""></a-box>
+
+         <a-box color="#545454" depth="2" height="4" width="0.5" rotation="0 0 -90.129" material="color: #443145; repeat: NaN NaN; emissive: #4c3b4f; metalnessTextureRepeat: NaN NaN; normalScale: NaN NaN; normalTextureRepeat: NaN NaN; roughness: 0.2; offset: NaN NaN; ambientOcclusionTextureOffset: NaN NaN; ambientOcclusionTextureRepeat: NaN NaN; displacementBias: 0.98; displacementTextureOffset: NaN NaN; displacementTextureRepeat: NaN NaN; metalnessTextureOffset: NaN NaN; normalTextureOffset: NaN NaN; roughnessTextureOffset: NaN NaN; roughnessTextureRepeat: NaN NaN" 
+         geometry="" position="-5.47035 0.81381 -13.59119" scale="3.14659 0.58582 0.35675" opacity="1" visible=""></a-box>
+
+         <a-entity light="color: #c1e7cc; intensity: 1.62; angle: 120" position="1.94165 11.12655 2.15944" rotation="-64.42403 80.64266374907311 -105.55441" scale="0.2 1 1"></a-entity>
+        <a-entity light="type: point; color: #f0ffd1; intensity: 0.8; angle: -60; decay: 1.02"
+         position="5.13162 5.19812 -12.12058" visible="" 
+         rotation="5.205 -80.6220372684484 -64.99747819523085" 
+         scale="2.26249 1 -4.15112"></a-entity>
+
+        <a-entity light="type: point; color: #f0ffd1; intensity: 0.8; angle: -60; decay: 1.02" position="-1.12386 5.19812 -12.12058" visible="" rotation="5.205 -80.6220372684484 -64.99747819523085" scale="2.26249 1 -4.15112"></a-entity>
+        
+
+        <a-torus color="#43A367" arc="270" radius="5" radius-tubular="0.1" 
+        geometry="primitive: torusKnot; radius: 4.87; radiusTubular: 0.72" 
+        material="color: #f722db; emissive: #1512ca; width: 512.6; wireframe: true; wireframeLinewidth: 4" 
+        position="-4.312 1.75474 -9.093" scale="0.2 0.2 0.2" rotation="-37.49034740879515 47.051867093938334 -26.77832847102929"></a-torus>
+
+        <a-torus color="#43A367" arc="270" radius="5" radius-tubular="0.1" 
+        geometry="arc: 160; radius: 4.87; radiusTubular: 0.72" 
+        material="color: #626062; emissive: #0d0c41; width: 512.6; wireframe: true; wireframeLinewidth: 4" 
+        position="-4.347 -0.01632 -6.161" scale="0.5903 0.41453 0.29772" 
+        rotation="-89.10525038315537 109.42806337644566 126.1716090235537"></a-torus>
+
+    </scene>
+
+
+
+</body>
+</html>
