@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simple Menu</title>
+
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    background-image: url("Monet_sunrise.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(2, 160px);
+    gap: 20px;
+  }
+
+  .button {
+    width: 160px;
+    height: 160px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    font-size: 18px;
+    transition: background 0.2s ease, font-weight 0.2s ease, transform 0.1s ease;
+  }
+
+  .button:hover,
+  .button.active {
+    background: rgba(8, 132, 248, 0.947);
+    font-weight: bold;
+    transform: scale(1.05);
+  }
+</style>
+</head>
+
+<body>
+
+<div class="menu">
+  <div class="button start-btn">START GAME</div>
+  <div class="button">OPTIONS</div>
+
+  <div class="button website-btn">VISIT WEBSITE</div>
+  <div class="button">EXIT</div>
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.button');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  // ▶ START GAME opens another HTML file
+  document.querySelector('.start-btn').addEventListener('click', () => {
+    window.location.href = 'firstdraft.html'; // <-- your game file
+  });
+
+  // Website button
+  document.querySelector('.website-btn').addEventListener('click', () => {
+    window.open('https://example.com', '_blank');
+  });
+</script>
+
+</body>
+</html>
