@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Grey? interactive painting</title>
+</head>
+
+<body>
+    <div class="scene">
+        <!-- Background images -->
+        <img src="a/atputa.jpg" class="bg bg1">
+        <img src="a/uzmaniba.png" class="bg bg2">
+        <img src="a/lidzsvars.jpg" class="bg bg3">
+
+        <!-- Foreground images -->
+        <img src="a/atputa tels.png" class="fg fg1">
+        <img src="a/uzmaniba tels.png" class="fg fg2">
+        <img src="a/lidzsvars tels.png" class="fg fg3">
+    </div>
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .scene {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            /* left: 50%; */
+            /* transform: translateX(-50%); */
+            height: 100%;
+            opacity: 0;
+        }
+
+        /* Background */
+        .bg {
+            /* width: 100%; */
+            height: 100%;
+            object-fit: cover;
+            left: 0;
+            transform: none;
+        }
+
+        .fg {
+            z-index: 2;
+        }
+
+        /* Fade */
+        @keyframes fadeCycle {
+            0%   { opacity: 0; }
+            10%  { opacity: 1; }
+            30%  { opacity: 1; }
+            40%  { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        /* Background: hue only */
+        @keyframes hueShift {
+            from { filter: hue-rotate(0deg); }
+            to   { filter: hue-rotate(360deg); }
+        }
+
+        /* Foreground: hue + saturation combined */
+        @keyframes hueSatShift {
+            0% {
+                filter: hue-rotate(0deg) saturate(2);
+            }
+            50% {
+                filter: hue-rotate(180deg) saturate(1);
+            }
+            100% {
+                filter: hue-rotate(360deg) saturate(0.2);
+            }
+        }
+
+        /* Timing */
+        .bg1 {
+            animation: fadeCycle 12s infinite, hueShift 6s linear infinite;
+            animation-delay: 0s;
+        }
+
+        .bg2 {
+            animation: fadeCycle 12s infinite, hueShift 6s linear infinite;
+            animation-delay: 4s;
+        }
+
+        .bg3 {
+            animation: fadeCycle 12s infinite, hueShift 6s linear infinite;
+            animation-delay: 8s;
+        }
+
+        .fg1 {
+            animation: fadeCycle 12s infinite, hueSatShift 6s linear infinite;
+            animation-delay: 0s;
+        }
+
+        .fg2 {
+            animation: fadeCycle 12s infinite, hueSatShift 6s linear infinite;
+            animation-delay: 4s;
+        }
+
+        .fg3 {
+            animation: fadeCycle 12s infinite, hueSatShift 6s linear infinite;
+            animation-delay: 8s;
+        }
+    </style>
+</body>
+
+</html>
